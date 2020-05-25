@@ -1,4 +1,4 @@
-FROM php:7.3
+FROM php:7.2
 
 LABEL maintainer="Adan Rehtla <adan@adanrehtla.com>"
 
