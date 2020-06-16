@@ -26,7 +26,7 @@ RUN apt-get update \
 
 # Laravel Server Requirements: https://laravel.com/docs/7.x#server-requirements
 # https://github.com/docker-library/php/issues/912
-RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
+RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
 	&& docker-php-ext-configure zip
 RUN docker-php-ext-install \
         bcmath \
@@ -38,7 +38,7 @@ RUN docker-php-ext-install \
         zip \
         tidy
 
-RUN pecl install xdebug \
+RUN pecl install xdebug-2.9.0 \
     && echo "xdebug.remote_enable=on" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
     && echo "xdebug.remote_host = host.docker.internal" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
     && docker-php-ext-enable xdebug \
