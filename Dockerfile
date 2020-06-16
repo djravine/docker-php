@@ -20,6 +20,7 @@ RUN apt-get update \
         pgpgpg \
         pngquant \
         procps \
+	libtidy-dev \
      && apt-get clean \
      && rm -rf /var/lib/apt/lists/*
 
@@ -34,7 +35,8 @@ RUN docker-php-ext-install \
         pcntl \
 	pdo \
         pdo_mysql \
-        zip
+        zip \
+	tidy
 
 RUN pecl install xdebug \
     && echo "xdebug.remote_enable=on" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
