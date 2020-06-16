@@ -20,7 +20,7 @@ RUN apt-get update \
         pgpgpg \
         pngquant \
         procps \
-	libtidy-dev \
+        libtidy-dev \
      && apt-get clean \
      && rm -rf /var/lib/apt/lists/*
 
