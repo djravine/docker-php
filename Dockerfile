@@ -36,7 +36,7 @@ RUN docker-php-ext-install \
 	pdo \
         pdo_mysql \
         zip \
-	tidy
+        tidy
 
 RUN pecl install xdebug \
     && echo "xdebug.remote_enable=on" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
