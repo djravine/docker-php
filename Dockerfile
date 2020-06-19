@@ -21,6 +21,16 @@ RUN apt-get update \
         pngquant \
         procps \
         libtidy-dev \
+        nodejs \
+        libxtst6 \
+        libnss3 \
+        libnspr4 \
+        libxss1 \
+        libasound2 \
+        libatk-bridge2.0-0 \
+        libgtk-3-0 \
+        libgdk-pixbuf2.0-0 \
+        libgbm-dev \
      && apt-get clean \
      && rm -rf /var/lib/apt/lists/*
 
@@ -42,4 +52,5 @@ RUN pecl install xdebug \
     && echo "xdebug.remote_enable=on" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
     && echo "xdebug.remote_host = host.docker.internal" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
     && docker-php-ext-enable xdebug \
-    && docker-php-ext-enable tidy
+    && docker-php-ext-enable tidy \
+    && docker-php-ext-enable exif
