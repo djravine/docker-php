@@ -21,7 +21,7 @@ RUN apt-get update \
         pngquant \
         procps \
         libtidy-dev \
-	nodejs \
+        nodejs \
         libxtst6 \
         libnss3 \
         libnspr4 \
