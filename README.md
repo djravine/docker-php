@@ -24,43 +24,75 @@ docker build -t intellipharm/php-xdebug:${BRANCH} .
 Run `PHPUnit`
 
 ``` shell
-docker run --rm -v ${DIR}/api:/app -w /app intellipharm/php-xdebug:7.4 ./vendor/bin/phpunit
+docker run --rm \
+-v ${DIR}/api:/app \
+-w /app intellipharm/php-xdebug:7.4 \
+./vendor/bin/phpunit
 ```
 
 Run `PHPUnit` with a different version of PHP
 
 ``` shell
-docker run --rm -v ${DIR}/api:/app -w /app intellipharm/php-xdebug:5.6 ./vendor/bin/phpunit
+docker run --rm \
+-v ${DIR}/api:/app \
+-w /app intellipharm/php-xdebug:5.6 \
+./vendor/bin/phpunit
 ```
 
 Run `PHPUnit` with specific test suites
 
 ``` shell
-docker run --rm -v ${DIR}/api:/app -w /app intellipharm/php-xdebug:7.4 ./vendor/bin/phpunit --testsuite "Functional,Unit"
+docker run --rm \
+-v ${DIR}/api:/app \
+-w /app intellipharm/php-xdebug:7.4 \
+./vendor/bin/phpunit \
+--testsuite "Functional,Unit"
 ```
 
 Run `PHPUnit` with XML log
 
 ``` shell
-docker run --rm -v ${DIR}/api:/app -w /app intellipharm/php-xdebug:7.4 ./vendor/bin/phpunit --log-junit storage/tests/phpunit-junit.xml
+docker run --rm \
+-v ${DIR}/api:/app \
+-w /app intellipharm/php-xdebug:7.4 \
+./vendor/bin/phpunit \
+--log-junit storage/tests/phpunit-junit.xml
 ```
 
 Run `PHPUnit` and generate Code Coverage Report
 
 ``` shell
-docker run --rm -v ${DIR}/api:/app -w /app intellipharm/php-xdebug:7.4 ./vendor/bin/phpunit --coverage-html storage/tests/coverage/html --coverage-clover storage/tests/coverage/phpunit-clover.xml
+docker run --rm \
+-v ${DIR}/api:/app \
+-w /app intellipharm/php-xdebug:7.4 \
+./vendor/bin/phpunit \
+--coverage-html storage/tests/coverage/html \
+--coverage-clover storage/tests/coverage/phpunit-clover.xml
 ```
 
 Run `PHPUnit` with specific test suites and generate Code Coverage Report
 
 ``` shell
-docker run --rm -v ${DIR}/api:/app -w /app intellipharm/php-xdebug:7.4 ./vendor/bin/phpunit --testsuite "Functional,Unit" --coverage-html storage/tests/coverage/html --coverage-clover storage/tests/coverage/phpunit-clover.xml
+docker run --rm \
+-v ${DIR}/api:/app \
+-w /app intellipharm/php-xdebug:7.4 \
+./vendor/bin/phpunit \
+--testsuite "Functional,Unit" \
+--coverage-html storage/tests/coverage/html \
+--coverage-clover storage/tests/coverage/phpunit-clover.xml
 ```
 
 Run `PHPUnit` with specific test suites and generate Code Coverage Report with XML log
 
 ``` shell
-docker run --rm -v ${DIR}/api:/app -w /app intellipharm/php-xdebug:7.4 ./vendor/bin/phpunit --testsuite "Functional,Unit" --coverage-html storage/tests/coverage/html --coverage-clover storage/tests/coverage/phpunit-clover.xml --log-junit storage/tests/phpunit-junit.xml
+docker run --rm \
+-v ${DIR}/api:/app \
+-w /app intellipharm/php-xdebug:7.4 \
+./vendor/bin/phpunit \
+--testsuite "Functional,Unit" \
+--coverage-html storage/tests/coverage/html \
+--coverage-clover storage/tests/coverage/phpunit-clover.xml \
+--log-junit storage/tests/phpunit-junit.xml
 ```
 
 Access the `bash` shell
