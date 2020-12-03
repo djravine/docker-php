@@ -12,6 +12,7 @@ This repo contains at least one branch used to auto-build docker images on [Dock
 * `7.2` -> Builds image `intellipharm/php-xdebug:7.2`
 * `7.3` -> Builds image `intellipharm/php-xdebug:7.3`
 * `7.4` -> Builds image `intellipharm/php-xdebug:7.4`
+* `8.0` -> Builds image `intellipharm/php-xdebug:8.0`
 
 ## Usage
 
